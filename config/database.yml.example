@@ -1,0 +1,35 @@
+development:
+  adapter: postgresql
+  host: <%= ENV.fetch('RAILS_DBHOST', '127.0.0.1') %>
+  port: <%= ENV.fetch('RAILS_DBPORT', '5432') %>
+  username: <%= ENV.fetch('RAILS_DBUSERNAME', 'railsdev') %>
+  password: <%= ENV.fetch('RAILS_DBPASSWORD', 'password') %>
+  database: articlesapp_development
+  schema_search_path: public
+  encoding: unicode
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS', 2) %>
+  min_messages: log
+
+test:
+  adapter: postgresql
+  host: <%= ENV.fetch('RAILS_DBHOST', '127.0.0.1') %>
+  port: <%= ENV.fetch('RAILS_DBPORT', '5432') %>
+  username: <%= ENV.fetch('RAILS_DBUSERNAME', 'railsdev') %>
+  password: <%= ENV.fetch('RAILS_DBPASSWORD', 'password') %>
+  database: articlesapp_test
+  schema_search_path: public
+  encoding: unicode
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS', 2) %>
+  min_messages: log
+
+production:
+  adapter: postgresql
+  host: 127.0.0.1
+  port: 5432
+  username: railsdev
+  password: railsdev
+  database: articlesapp
+  schema_search_path: public
+  encoding: unicode
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS', 2) %>
+  min_messages: warning
